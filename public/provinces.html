@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Provernors</title>
+    <!-- Bootstrap linkelése CDN-ről -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Az oldalhoz tartozó css -->
+    <link rel="stylesheet" href="listings.css"/>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg  bg-dark navbar-dark">
+            <div>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse  navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="provinces.html">PROVINCES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="governors.html">GOVERNORS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="section-wrapper">
+        <section class="section">
+            <div class="section-title">
+                <div>
+                    <h1>PROVINCES</h1>
+                </div>
+                <div class="search-form">
+                    <form method="get">
+                        <input type="text" name="search-term" id="search-term" placeholder="SEARCH"/>
+                        <input type="submit" id="submit" name="submit" value="SEARCH"/>
+                    </form>
+                </div>
+            </div>
+            <div class="content">
+                <table class="table table-light table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>NAME</th>
+                            <th>GOVERNOR</th>
+                            <th>LEFT HANDED PEOPLE</th>
+                            <th>WINE PRODUCED</th>
+                            <th>EDIT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GAUL</td>
+                            <td>CAESAR</td>
+                            <td>2000</td>
+                            <td>999999</td>
+                            <td><a href="edit_provinces.html">EDIT</a></td>
+                        </tr>
+                        <tr>
+                            <td>CAPPADOCIA</td>
+                            <td>SEVERUS</td>
+                            <td>30</td>
+                            <td>500000</td>
+                            <td><a href="edit_provinces.html">EDIT</a></td>
+                        </tr>
+                        <tr>
+                            <td>IBERIA</td>
+                            <td>MAXIMINUS</td>
+                            <td>250</td>
+                            <td>6000</td>
+                            <td><a href="edit_provinces.html">EDIT</a></td>
+                        </tr>
+                        <tr>
+                            <td>THRACIA</td>
+                            <td>GALLIENUS</td>
+                            <td>873</td>
+                            <td>26555</td>
+                            <td><a href="edit_provinces.html">EDIT</a></td>
+                        </tr>
+                        <tr>
+                            <td>BRITANNIA</td>
+                            <td>VALERIUS</td>
+                            <td>2300</td>
+                            <td>7650</td>
+                            <td><a href="edit_provinces.html">EDIT</a></td>
+                        </tr>
+                        <tr>
+                            <td>GERMANIA</td>
+                            <td>GERMANICUS</td>
+                            <td>2</td>
+                            <td>1358</td>
+                            <td><a href="edit_provinces.html">EDIT</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="btn-create">
+                <button>CREATE</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
