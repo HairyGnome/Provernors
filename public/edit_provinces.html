@@ -22,7 +22,7 @@
 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="provinces.html">PROVINCES</a>
+                            <a class="nav-link" href="provinces.html">PROVINCES</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="governors.html">GOVERNORS</a>
@@ -34,24 +34,33 @@
     </div>
     <div>
         <section class="section">
-            <h1>EDIT PROVINCES</h1>
+            <h1>EDIT PROVINCE</h1>
             <div>
                 <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" name="name" id="name"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="governor">Governor</label>
-                        <input type="text" class="form-control" name="governor" id="governor"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="left-handed">Left Handed People</label>
-                        <input type="text" class="form-control" name="left-handed" id="left-handed"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="wine-produced">Wine Produced Annually</label>
-                        <input type="text" class="form-control" name="wine-produced" id="wine-produced"/>
+                    <div class="form">
+                        <div class="fields">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" name="name" id="name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="governor">Governor</label>
+                                <input type="text" class="form-control" name="governor" id="governor"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="left-handed">Left Handed People</label>
+                                <input type="text" class="form-control" name="left-handed" id="left-handed"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="wine-produced">Wine Produced Annually</label>
+                                <input type="text" class="form-control" name="wine-produced" id="wine-produced"/>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <input type="submit" value="Save"/>
+                            <input type="button" value="Cancel" href="provinces.html"/>
+                            <input type="button" value="Delete"/>
+                        </div>
                     </div>
                 </form>
             </div>
