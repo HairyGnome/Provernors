@@ -6,23 +6,15 @@
   <!-- Bootstrap linkelése CDN-ről -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <!-- Az oldalhoz tartozó css -->
-  <link rel="stylesheet" href="listings.css"/>
+  <link rel="stylesheet" href="../../../stylesheets/listings.css"/>
 </head>
 <body>
 <div>
-  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-    <div>
-      <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="provinces.html">PROVINCES</a>
+            <a class="nav-link" href="../../provinces/list/provinces.html">PROVINCES</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="governors.html">GOVERNORS</a>
@@ -30,7 +22,6 @@
 
         </ul>
       </div>
-    </div>
   </nav>
 </div>
 <div class="section-wrapper">
@@ -63,20 +54,20 @@
           <td>52</td>
           <td>MAXIMUS</td>
           <td>32</td>
-          <td><a href="edit_governors.html">EDIT</a></td>
+          <td><a href="../edit/edit_governor.html">EDIT</a></td>
         </tr>
         <tr>
           <td>AUGUSTUS</td>
           <td>28</td>
           <td>SPARTACUS</td>
           <td>44</td>
-          <td><a href="edit_governors.html">EDIT</a></td>
+          <td><a href="../edit/edit_governor.html">EDIT</a></td>
         </tr>
         </tbody>
       </table>
     </div>
     <div class="btn-create">
-      <button>CREATE</button>
+      <a href="../new/create_governor.html"><button>CREATE</button></a>
     </div>
   </section>
 </div>
