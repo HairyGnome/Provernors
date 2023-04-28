@@ -1,0 +1,29 @@
+Oldalak
+
+Provinces
+ - list
+ - edit
+ - new
+
+Governors
+ - list
+ - edit
+ - new
+
+ GET /provinces - /provinces/provinces.html
+    listProvincesMW
+    renderMW
+ GET /provinces/?search=:searchterm
+    searchProvincesMW
+
+ GET, POST /provinces/edit/:id - prov/edit/edit_prov
+    getProvinceMW
+    saveProvinceMW
+    renderMW
+
+ GET /provinces/del/:id
+    deleteProvinceMW
+
+ GET, POST /provinces/new
+    saveProvinceMW
+    renderMW

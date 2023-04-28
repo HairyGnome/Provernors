@@ -1,0 +1,47 @@
+<%- include('header', { cssPath: '/public/stylesheets/listings.css' } ) %>
+<body>
+<%- include('navbar') %>
+<div class="section-wrapper">
+    <section class="section">
+        <div class="section-title">
+            <div>
+                <h1>PROVINCES</h1>
+            </div>
+            <div class="search-form">
+                <form method="get">
+                    <input type="text" name="search-term" id="search-term" placeholder="SEARCH"/>
+                    <input type="submit" id="submit" name="submit" value="SEARCH"/>
+                </form>
+            </div>
+        </div>
+        <div class="content">
+            <table class="table table-light table-striped">
+                <thead class="table-dark">
+                <tr>
+                    <th>NAME</th>
+                    <th>GOVERNOR</th>
+                    <th>LEFT HANDED PEOPLE</th>
+                    <th>WINE PRODUCED</th>
+                    <th>EDIT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for( let key in provinces ) { %>
+                    <tr>
+                        <td><%= provinces[key].name %></td>
+                        <td><%= provinces[key].governor %></td>
+                        <td><%= provinces[key].leftHanded %></td>
+                        <td><%= provinces[key].wineProduced %></td>
+                        <td><a href="../edit/edit_province">EDIT</a></td>
+                    </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+        <div class="btn-create">
+            <a href="../new/create_province.html"><button>CREATE</button></a>
+        </div>
+    </section>
+</div>
+</body>
+<%- include('footer') %>
