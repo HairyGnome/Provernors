@@ -1,4 +1,4 @@
-<%- include('header', { cssPath: '/public/stylesheets/edits.css' }%>
+<%- include('header', { cssPath: '/public/stylesheets/edits.css' })%>
 <body>
 <%- include('navbar') %>
     <div>
@@ -27,8 +27,8 @@
                         </div>
                         <div class="buttons">
                             <input type="submit" value="Save"/>
-                            <a href="../list/provinces.html"><input type="button" value="Cancel"/></a>
-                            <a href="../list/provinces.html"><input type="button" value="Delete"/></a>
+                            <a href="/provinces/"><input type="button" value="Cancel"/></a>
+                            <a href="/provinces/del/<%= province._id%>"><input type="button" value="Delete"/></a>
                         </div>
                     </div>
                 </form>

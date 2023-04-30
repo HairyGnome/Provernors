@@ -15,6 +15,7 @@ const searchGovernorsMW = require('./middlewares/Governors/searchGovernorsMW')
 const getGovernorMW = require('./middlewares/Governors/getGovernorMW')
 const saveGovernorMW = require('./middlewares/Governors/saveGovernorMW')
 const deleteGovernorMW = require('./middlewares/Governors/deleteGovernorMW')
+const redirectMW = require('./middlewares/redirectMW');
 
 const Province = require('./models/Province');
 const Governor = require('./models/Governor');
@@ -28,7 +29,10 @@ app.listen(3000, () => {
     console.log("Listening on port 3000");
 });
 
+app.use(bodyParser.json());
+
 // objrepo init
+
 const objRepo = { };
 
 objRepo.Province = Province;
@@ -37,36 +41,35 @@ objRepo.ejs = ejs;
 
 // Province pages routing
 
-
-
-app.use('/provinces',
-    getProvincesMW(objRepo),
-    renderMW(objRepo, 'provinces'));
-
 app.use('/provinces/?search=:searchterm',
     searchProvincesMW(objRepo),
     renderMW(objRepo, 'provinces'));
 
 app.use('/provinces/edit/:id',
     getProvinceMW(objRepo),
-    saveProvinceMW(objRepo),
     renderMW(objRepo, 'edit_province'));
 
 app.get('/provinces/del/:id',
     getProvinceMW(objRepo),
     deleteProvinceMW(objRepo));
 
+app.use('/provinces/new/save',
+    saveProvinceMW(objRepo),
+    redirectMW(objRepo, '/provinces'));
+
 app.use('/provinces/new',
     renderMW(objRepo, 'create_province'));
 
-app.use('/provinces/new/save',
-    saveProvinceMW(objRepo));
+app.use('/provinces',
+    getProvincesMW(objRepo),
+    renderMW(objRepo, 'provinces'));
 
 
 
 
 
 // Governor pages routing
+
 app.use('/governors',
     getGovernorsMW(objRepo),
     renderMW(objRepo, 'governors'));
@@ -88,8 +91,9 @@ app.use('/governors/new',
     renderMW(objRepo, 'create_governor'));
 
 app.use('/governors/new/save',
-    saveGovernorMW(objRepo));
+    saveGovernorMW(objRepo)),
+    redirectMW(objRepo, '/governors');
+
 
 app.use('/',
-    getProvincesMW(objRepo),
-    renderMW(objRepo, 'provinces'));
+    redirectMW(objRepo, '/provinces'));

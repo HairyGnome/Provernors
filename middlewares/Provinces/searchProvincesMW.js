@@ -3,16 +3,13 @@
  */
 module.exports = function(objectrepostiory) {
     return function(req, res, next) {
-        if(req.body.searchterm === 'undefined') {
+        if(req.body.searchterm === 'undefined' && req.body.searchterm === '') {
             res.redirect('/');
         }
         let provinces = objectrepostiory.Province.find({
             'name': new RegExp(`.*${req.body.searchterm}.*`)
-        }).then(err => {
-            if(typeof err !== 'undefined') {
-                console.log(err);
-            }
-            res.locals.provinces = provinces;
+        }).then(results => {
+            res.locals.provinces = results;
             return next();
         });
     };

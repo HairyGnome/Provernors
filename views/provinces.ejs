@@ -9,8 +9,8 @@
             </div>
             <div class="search-form">
                 <form method="get">
-                    <input type="text" name="search-term" id="search-term" placeholder="SEARCH"/>
-                    <input type="submit" id="submit" name="submit" value="SEARCH"/>
+                    <input type="text" name="search" id="search" placeholder="SEARCH"/>
+                    <input type="submit" id="submit" value="SEARCH" />
                 </form>
             </div>
         </div>
@@ -32,14 +32,14 @@
                         <td><%= provinces[key].governor %></td>
                         <td><%= provinces[key].leftHanded %></td>
                         <td><%= provinces[key].wineProduced %></td>
-                        <td><a href="../edit/edit_province">EDIT</a></td>
+                        <td><a href="/provinces/edit/<%= provinces[key]._id %>">EDIT</a></td>
                     </tr>
                 <% } %>
                 </tbody>
             </table>
         </div>
         <div class="btn-create">
-            <a href="../new/create_province.html"><button>CREATE</button></a>
+            <a href="/provinces/new"><input type="button" value="CREATE"/></a>
         </div>
     </section>
 </div>
