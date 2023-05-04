@@ -5,7 +5,7 @@
         <section class="section">
             <h1>EDIT PROVINCE</h1>
             <div>
-                <form method="post">
+                <form method="post" action="/provinces/edit/<%= province._id %>/update">
                     <div class="form">
                         <div class="fields">
                             <div class="form-group">
@@ -18,11 +18,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="left-handed">Left Handed People</label>
-                                <input type="text" class="form-control" name="left-handed" id="left-handed" value="<%= province.leftHanded %>"/>
+                                <input type="text" class="form-control" name="leftHanded" id="leftHanded" value="<%= province.leftHanded %>"/>
                             </div>
                             <div class="form-group">
                                 <label for="wine-produced">Wine Produced Annually</label>
-                                <input type="text" class="form-control" name="wine-produced" id="wine-produced" value="<%= province.wineProduced %>"/>
+                                <input type="text" class="form-control" name="wineProduced" id="wineProduced" value="<%= province.wineProduced %>"/>
                             </div>
                         </div>
                         <div class="buttons">

@@ -4,18 +4,19 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const mongoose = require('./db/db');
 
-const getProvincesMW = require('./middlewares/Provinces/getProvincesMW')
-const renderMW = require('./middlewares/renderMW')
-const searchProvincesMW = require('./middlewares/Provinces/searchProvincesMW')
-const getProvinceMW = require('./middlewares/Provinces/getProvinceMW')
-const saveProvinceMW = require('./middlewares/Provinces/saveProvinceMW')
-const deleteProvinceMW = require('./middlewares/Provinces/deleteProvinceMW')
-const getGovernorsMW = require('./middlewares/Governors/getGovernorsMW')
-const searchGovernorsMW = require('./middlewares/Governors/searchGovernorsMW')
-const getGovernorMW = require('./middlewares/Governors/getGovernorMW')
-const saveGovernorMW = require('./middlewares/Governors/saveGovernorMW')
-const deleteGovernorMW = require('./middlewares/Governors/deleteGovernorMW')
+const getProvincesMW = require('./middlewares/Provinces/getProvincesMW');
+const getProvinceMW = require('./middlewares/Provinces/getProvinceMW');
+const saveProvinceMW = require('./middlewares/Provinces/saveProvinceMW');
+const deleteProvinceMW = require('./middlewares/Provinces/deleteProvinceMW');
+const updateProvinceMW = require('./middlewares/Provinces/updateProvinceMW');
+const getGovernorsMW = require('./middlewares/Governors/getGovernorsMW');
+const getGovernorMW = require('./middlewares/Governors/getGovernorMW');
+const saveGovernorMW = require('./middlewares/Governors/saveGovernorMW');
+const deleteGovernorMW = require('./middlewares/Governors/deleteGovernorMW');
+const upsertGovernorMW = require('./middlewares/Governors/upsertGovernorMW');
 const redirectMW = require('./middlewares/redirectMW');
+const renderMW = require('./middlewares/renderMW');
+
 
 const Province = require('./models/Province');
 const Governor = require('./models/Governor');
@@ -30,6 +31,9 @@ app.listen(3000, () => {
 });
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 // objrepo init
 
@@ -41,9 +45,10 @@ objRepo.ejs = ejs;
 
 // Province pages routing
 
-app.use('/provinces/?search=:searchterm',
-    searchProvincesMW(objRepo),
-    renderMW(objRepo, 'provinces'));
+app.use('/provinces/edit/:id/update',
+    upsertGovernorMW(objRepo),
+    updateProvinceMW(objRepo),
+    redirectMW(objRepo, '/provinces'));
 
 app.use('/provinces/edit/:id',
     getProvinceMW(objRepo),
@@ -54,6 +59,7 @@ app.get('/provinces/del/:id',
     deleteProvinceMW(objRepo));
 
 app.use('/provinces/new/save',
+    upsertGovernorMW(objRepo),
     saveProvinceMW(objRepo),
     redirectMW(objRepo, '/provinces'));
 
@@ -72,10 +78,6 @@ app.use('/provinces',
 
 app.use('/governors',
     getGovernorsMW(objRepo),
-    renderMW(objRepo, 'governors'));
-
-app.use('/governors/?search=:searchterm',
-    searchGovernorsMW(objRepo),
     renderMW(objRepo, 'governors'));
 
 app.use('/governors/edit/:id',

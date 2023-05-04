@@ -15,15 +15,8 @@ module.exports = function(objectrepostiory) {
         newProvince.wineProduced = req.body.wineProduced;
 
         objectrepostiory.Governor.findOne({name: req.body.governor}, (err, governor) => {
-            if(err) {
+            if(err || !governor) {
                 next(err);
-            }
-            if(!governor) {
-                governor = new objectrepostiory.Governor();
-                governor.name = req.body.governor;
-                governor.save((err) => {
-                    next(err);
-                });
             }
             newProvince.governor = governor.name;
             newProvince.governorId = governor._id;
