@@ -9,8 +9,8 @@
             </div>
             <div class="search-form">
                 <form method="get">
-                    <input type="text" name="search-term" id="search-term" placeholder="SEARCH"/>
-                    <input type="submit" id="submit" name="submit" value="SEARCH"/>
+                    <input type="text" name="search" id="search" placeholder="SEARCH"/>
+                    <input type="submit" id="submit" value="SEARCH"/>
                 </form>
             </div>
         </div>
@@ -19,9 +19,9 @@
                 <thead class="table-dark">
                 <tr>
                     <th>NAME</th>
-                    <th>GOVERNOR</th>
-                    <th>LEFT HANDED PEOPLE</th>
-                    <th>WINE PRODUCED</th>
+                    <th>AGE</th>
+                    <th>FAVOURITE GLADIATOR</th>
+                    <th>SANDAL SIZE</th>
                     <th>EDIT</th>
                 </tr>
                 </thead>
@@ -29,17 +29,17 @@
                 <% for( let key in governors ) { %>
                     <tr>
                         <td><%= governors[key].name %></td>
-                        <td><%= governors[key].governor %></td>
-                        <td><%= governors[key].leftHanded %></td>
-                        <td><%= governors[key].wineProduced %></td>
-                        <td><a href="../edit/edit_province">EDIT</a></td>
+                        <td><%= governors[key].age %></td>
+                        <td><%= governors[key].favouriteGladiator %></td>
+                        <td><%= governors[key].sandalSize %></td>
+                        <td><a href="/governors/edit/<%= governors[key]._id %>"><input type="button" class="btn btn-dark" value="EDIT"/></a></td>
                     </tr>
                 <% } %>
                 </tbody>
             </table>
         </div>
         <div class="btn-create">
-            <a href="../new/create_province.html"><button>CREATE</button></a>
+            <a href="/governors/new"><button>CREATE</button></a>
         </div>
     </section>
 </div>

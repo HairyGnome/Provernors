@@ -6,7 +6,8 @@ module.exports = function(objectrepository) {
         if(req.body.name === 'undefined'
             || req.body.governor === 'undefined'
             || req.body.leftHanded === 'undefined'
-            || req.body.wineProduced === 'undefined') {
+            || req.body.wineProduced === 'undefined'
+            || req.params.id === 'undefined') {
             res.redirect('/provinces')
         }
         return objectrepository.Governor.findOne({name: req.body.governor}, (err, governor) => {
@@ -17,7 +18,7 @@ module.exports = function(objectrepository) {
                 {
                     name: req.body.name,
                     governor: governor.name,
-                    governorId: governor._id,
+                    _governorId: governor._id,
                     leftHanded: req.body.leftHanded,
                     wineProduced: req.body.wineProduced
                 },

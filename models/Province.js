@@ -8,7 +8,7 @@ const Province = mongoose.model('Province', {
     governor: {
         type: String
     },
-    governorId: {
+    _governorId: {
         type: Schema.Types.ObjectId,
         ref: 'Governor'
     },

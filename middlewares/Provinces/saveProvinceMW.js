@@ -18,9 +18,10 @@ module.exports = function(objectrepostiory) {
             if(err || !governor) {
                 next(err);
             }
-            newProvince.governor = governor.name;
-            newProvince.governorId = governor._id;
-
+            if(governor) {
+                newProvince.governor = governor.name;
+                newProvince._governorId = governor._id;
+            }
             newProvince.save((err) => {
                 if(err){
                     return next(err);

@@ -4,8 +4,7 @@
 module.exports = function(objectrepostiory) {
     return function(req, res, next) {
         let search = req.query.search;
-        if(typeof search !== 'undefined' && search !== '')
-        {
+        if(typeof search !== 'undefined' && search !== '') {
             return objectrepostiory.Province.find({name: new RegExp(`.*${search}.*`)},
                 (err, results) => {
                 if(err){

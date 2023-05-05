@@ -3,12 +3,23 @@
  */
 module.exports = function(objectrepostiory) {
     return function(req, res, next) {
-        let governors = objectrepostiory.Governor.find({}).exec().then((results, err) => {
-           if(typeof err !== 'undefined') {
-               console.log(err);
-           }
-           res.locals.governors = results;
-           return next();
+        let search = req.query.search;
+        if(typeof search !== 'undefined' && search !== '') {
+            return objectrepostiory.Governor.find({name: new RegExp(`.*${search}.*`)},
+                (err, results) => {
+                    if(err){
+                        return next(err);
+                    }
+                    res.locals.governors = results
+                    return next();
+                });
+        }
+        return objectrepostiory.Governor.find({}, (err, results) => {
+            if(err){
+                return next(err);
+            }
+            res.locals.governors = results;
+            return next();
         });
     };
 };
