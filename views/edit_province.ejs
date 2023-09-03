@@ -1,0 +1,39 @@
+<%- include('header', { cssPath: '/public/stylesheets/edits.css' })%>
+<body>
+<%- include('navbar') %>
+    <div>
+        <section class="section">
+            <h1>EDIT PROVINCE</h1>
+            <div>
+                <form method="post" action="/provinces/edit/<%= province._id %>/update">
+                    <div class="form">
+                        <div class="fields">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" name="name" id="name" value="<%= province.name %>"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="governor">Governor</label>
+                                <input type="text" class="form-control" name="governor" id="governor" value="<%= province.governor %>"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="left-handed">Left Handed People</label>
+                                <input type="text" class="form-control" name="leftHanded" id="leftHanded" value="<%= province.leftHanded %>"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="wine-produced">Wine Produced Annually</label>
+                                <input type="text" class="form-control" name="wineProduced" id="wineProduced" value="<%= province.wineProduced %>"/>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <input type="submit" value="Save"/>
+                            <a href="/provinces/"><input type="button" value="Cancel"/></a>
+                            <a href="/provinces/del/<%= province._id%>"><input type="button" value="Delete"/></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

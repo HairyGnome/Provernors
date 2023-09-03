@@ -1,0 +1,23 @@
+.section {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.form {
+    display: flex;
+    margin-top: 5%;
+}
+
+.fields {
+    width: 60%;
+}
+
+
+
+.buttons {
+    flex: 1;
+    display: flex;
+    padding-left: 5%;
+    justify-content: space-around;
+    align-items: flex-end;
+}

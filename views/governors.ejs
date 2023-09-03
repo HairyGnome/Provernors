@@ -1,0 +1,47 @@
+<%- include('header', { cssPath: '/public/stylesheets/listings.css' }) %>
+<body>
+<%- include('navbar') %>
+<div class="section-wrapper">
+    <section class="section">
+        <div class="section-title">
+            <div>
+                <h1>GOVERNORS</h1>
+            </div>
+            <div class="search-form">
+                <form method="get">
+                    <input type="text" name="search" id="search" placeholder="SEARCH"/>
+                    <input type="submit" id="submit" value="SEARCH"/>
+                </form>
+            </div>
+        </div>
+        <div class="content">
+            <table class="table table-light table-striped">
+                <thead class="table-dark">
+                <tr>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                    <th>FAVOURITE GLADIATOR</th>
+                    <th>SANDAL SIZE</th>
+                    <th>EDIT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for( let key in governors ) { %>
+                    <tr>
+                        <td><%= governors[key].name %></td>
+                        <td><%= governors[key].age %></td>
+                        <td><%= governors[key].favouriteGladiator %></td>
+                        <td><%= governors[key].sandalSize %></td>
+                        <td><a href="/governors/edit/<%= governors[key]._id %>"><input type="button" class="btn btn-dark" value="EDIT"/></a></td>
+                    </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+        <div class="btn-create">
+            <a href="/governors/new"><button>CREATE</button></a>
+        </div>
+    </section>
+</div>
+</body>
+<%- include('footer') %>

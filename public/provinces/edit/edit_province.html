@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Provernors</title>
+    <!-- Bootstrap linkelése CDN-ről -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Az oldalhoz css -->
+    <link rel="stylesheet" href="../../stylesheets/edits.css"/>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../list/provinces.html">PROVINCES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../governors/list/governors.html">GOVERNORS</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div>
+        <section class="section">
+            <h1>EDIT PROVINCE</h1>
+            <div>
+                <form method="post">
+                    <div class="form">
+                        <div class="fields">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" name="name" id="name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="governor">Governor</label>
+                                <input type="text" class="form-control" name="governor" id="governor"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="left-handed">Left Handed People</label>
+                                <input type="text" class="form-control" name="left-handed" id="left-handed"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="wine-produced">Wine Produced Annually</label>
+                                <input type="text" class="form-control" name="wine-produced" id="wine-produced"/>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <input type="submit" value="Save"/>
+                            <a href="../list/provinces.html"><input type="button" value="Cancel"/></a>
+                            <a href="../list/provinces.html"><input type="button" value="Delete"/></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

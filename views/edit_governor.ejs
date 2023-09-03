@@ -1,0 +1,39 @@
+<%- include('header', { cssPath: '/public/stylesheets/edits.css' }) %>
+<body>
+<%- include('navbar') %>
+<div>
+  <section class="section">
+    <h1>EDIT GOVERNOR</h1>
+    <div>
+      <form method="post" action="/governors/edit/<%= governor._id %>/update">
+        <div class="form">
+          <div class="fields">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" name="name" id="name" value="<%= governor.name %>" required/>
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="number" class="form-control" name="age" id="age" value="<%= governor.age %>"/>
+            </div>
+            <div class="form-group">
+              <label for="favourite-gladiator">Favourite Gladiator</label>
+              <input type="text" class="form-control" name="favouriteGladiator" id="favouriteGladiator" value="<%= governor.favouriteGladiator %>"/>
+            </div>
+            <div class="form-group">
+              <label for="sandal-size">Sandal Size</label>
+              <input type="number" class="form-control" name="sandalSize" id="sandalSize" value="<%= governor.sandalSize %>"/>
+            </div>
+          </div>
+          <div class="form-group buttons">
+            <input type="submit" value="Save"/>
+            <a href="/governors"><input type="button" value="Cancel"/></a>
+            <a href="/governors/del/<%= governor._id %>"><input type="button" value="Delete"/></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+</body>
+<%- include('footer') %>
